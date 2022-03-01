@@ -6,36 +6,22 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget{
-  const MyApp({Key? key}) : super(key:key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hand sign translator',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Hand sign translator'),
+          backgroundColor: const Color(0xFFE94560),
+          leading: Builder(builder: (BuildContext context) {
+            return const IconButton(
+                onPressed: null,
+                icon: Icon(Icons.menu, color: Color(0xFF0F3460)));
+          }),
         ),
-        //uses own implemented class
-        body: const Video()
-      ),
-    );
-  }
-}
-
-//StatelessWidget = static widget at runtime
-class Video extends StatelessWidget {
-  const Video({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: const <Widget>[
-          Expanded(child: Text('hello',textAlign: TextAlign.center,)),
-          Expanded(child: Text('valami',textAlign: TextAlign.center,))
-          ],
       ),
     );
   }
