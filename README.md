@@ -1,12 +1,18 @@
-# daveran
+# DAVERAN
 
-A new Flutter project.
+The goal of the DAVERAN project is to create an application that recognises prebaked handsigns and  show the user their meaning. The application will store the recognised symbols in a sequence, which will make the constuction of sentences possible.
 
-## Getting Started
+The project uses TensorFlow Lite for the machine learning in the backend, and Flutter for the UI in the frontend.
 
-## This project uses
+The target platform of the project is Android, but it's possible, that in the future more platforms will be supported.
 
-#Flutter
+# Getting Started
+For information about getting started with the libraries used in this project, go to the "This project uses" section.
+
+# This project uses
+
+## Flutter
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
@@ -15,3 +21,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## TensorFlow Lite
+
+Getting started with TensorFlow Lite: https://www.tensorflow.org/lite/guide
+
+GitHub repository: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite
+
