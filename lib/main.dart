@@ -2,6 +2,8 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:sliding_up_panel/sliding_up_panel.dart';
+
 List<CameraDescription> cameras = [];
 
 Future<void> main() async {
@@ -19,7 +21,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hand sign translator',
       home: Scaffold(
-        body: const CameraApp(),
+        body: SlidingUpPanel(
+          panel: const Center(
+            child: Text("This is the sliding Widget"),
+          ),
+          body: const Center(child: CameraApp()),
+        ),
         appBar: AppBar(
           backgroundColor: const Color(0xFFE94560),
           leading: Builder(builder: (BuildContext context) {
@@ -41,6 +48,7 @@ class CameraApp extends StatefulWidget {
 }
 
 class _CameraAppState extends State<CameraApp> {
+  //establishing connection to the device camera
   CameraController controller =
       CameraController(cameras[0], ResolutionPreset.max);
 
