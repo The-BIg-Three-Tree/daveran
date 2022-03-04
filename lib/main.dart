@@ -6,23 +6,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 //avalibe cameras
 List<CameraDescription> cameras = [];
-String text = '''
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-
-Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
-''';
+String text = '';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
