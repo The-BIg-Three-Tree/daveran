@@ -4,7 +4,9 @@ import 'dart:async';
 
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+//avalibe cameras
 List<CameraDescription> cameras = [];
+const String text = '';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,12 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hand sign translator',
       home: Scaffold(
-        body: SlidingUpPanel(
-          panel: const Center(
-            child: Text("This is the sliding Widget"),
-          ),
-          body: const Center(child: CameraApp()),
-        ),
+        body: const SlidingUpPanelWidget(),
         appBar: AppBar(
           backgroundColor: const Color(0xFFE94560),
           leading: Builder(builder: (BuildContext context) {
@@ -77,6 +74,28 @@ class _CameraAppState extends State<CameraApp> {
     }
     return Container(
       child: CameraPreview(controller),
+    );
+  }
+}
+
+class SlidingUpPanelWidget extends StatelessWidget {
+  //final ScrollController controller;
+
+  const SlidingUpPanelWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SlidingUpPanel(
+      body: const CameraApp(),
+      panelBuilder: (ScrollController sc) {
+        return ListView.builder(
+          controller: sc,
+          itemCount: 1,
+          itemBuilder: (BuildContext context, int i) {
+            return const Text(text);
+          },
+        );
+      },
     );
   }
 }
