@@ -6,7 +6,23 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 //avalibe cameras
 List<CameraDescription> cameras = [];
-const String text = '';
+String text = '''
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+
+Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg Valami szöveg 
+''';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -79,22 +95,31 @@ class _CameraAppState extends State<CameraApp> {
 }
 
 class SlidingUpPanelWidget extends StatelessWidget {
-  //final ScrollController controller;
-
   const SlidingUpPanelWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
+      padding: const EdgeInsets.all(10),
       body: const CameraApp(),
       panelBuilder: (ScrollController sc) {
         return ListView.builder(
-          controller: sc,
-          itemCount: 1,
-          itemBuilder: (BuildContext context, int i) {
-            return const Text(text);
-          },
-        );
+            controller: sc,
+            itemCount: 2,
+            itemBuilder: (BuildContext context, int i) {
+              if (i == 0) {
+                return Align(
+                    alignment: Alignment.centerRight,
+                    child: OutlinedButton(
+                      child: const Icon(Icons.delete),
+                      onPressed: () {
+                        text = '';
+                      },
+                    ));
+              } else {
+                return Text(text);
+              }
+            });
       },
     );
   }
